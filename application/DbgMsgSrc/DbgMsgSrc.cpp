@@ -141,7 +141,7 @@ void SendMessageTestNotepad(std::string msg)
 
 void SendMessageDebugViewpp(std::string msg)
 {
-    HWND debugviewpp = FindWindowA(NULL, "[Capture Win32] - DebugView++");
+    HWND debugviewpp = FindWindowA(NULL, "[Capture Win32] - DebugViewAd++");
     SendMessageA(debugviewpp, EM_REPLACESEL, GetCurrentProcessId(), (LPARAM)msg.data());
 }
 
@@ -230,7 +230,7 @@ void TestSendMessage(const std::string& filename)
     std::cout << "writing... " << lines.size() << " lines\n";
     Timer timer;
 
-    HWND debugviewpp = FindWindow(NULL, L"[Capture Win32] - DebugView++");
+    HWND debugviewpp = FindWindow(NULL, L"[Capture Win32] - DebugViewAd++");
 
     auto t1 = timer.now();
     for (const auto& s : lines)

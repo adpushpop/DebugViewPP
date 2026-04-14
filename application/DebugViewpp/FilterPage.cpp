@@ -138,8 +138,8 @@ void CFilterPageImpl::UpdateGridColors(int item) const
 void CFilterPageImpl::InsertFilter(int item, const Filter& filter)
 {
     auto pFilterProp = PropCreateSimple(L"", WStr(filter.text));
-    auto pBkColor = PropCreateColorItem(L"Background Color", filter.bgColor);
-    auto pTxColor = PropCreateColorItem(L"Text Color", filter.fgColor);
+	auto pBkColor = PropCreateColorItem(L"\u80cc\u666f\u8272", filter.bgColor);
+	auto pTxColor = PropCreateColorItem(L"\u6587\u5b57\u989c\u8272", filter.fgColor);
     auto pFilter = CreateEnumTypeItem(L"", m_filterTypes, m_filterTypeCount, filter.filterType);
     pFilter->SetEnabled(static_cast<BOOL>(filter.matchType != MatchType::RegexGroups));
 
@@ -162,13 +162,13 @@ void CFilterPageImpl::AddFilter(const Filter& filter)
 BOOL CFilterPageImpl::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
 {
     m_grid.SubclassWindow(GetDlgItem(IDC_FILTER_GRID));
-    m_grid.InsertColumn(SubItem::Enable, L"", LVCFMT_LEFT, 24, 0, -1, 0);
-    m_grid.InsertColumn(SubItem::Text, L"Filter", LVCFMT_LEFT, 174, 0, -1, 1);
-    m_grid.InsertColumn(SubItem::Match, L"Match", LVCFMT_LEFT, 76, 0, -1, 2);
-    m_grid.InsertColumn(SubItem::Type, L"Type", LVCFMT_LEFT, 55, 0, -1, 3);
-    m_grid.InsertColumn(SubItem::Background, L"Bg", LVCFMT_LEFT, 24, 0, -1, 4);
-    m_grid.InsertColumn(SubItem::Foreground, L"Fg", LVCFMT_LEFT, 24, 0, -1, 5);
-    m_grid.InsertColumn(SubItem::Remove, L"", LVCFMT_LEFT, 16, 0, -1, 6);
+	m_grid.InsertColumn(SubItem::Enable, L"", LVCFMT_LEFT, 24, 0, -1, 0);
+	m_grid.InsertColumn(SubItem::Text, L"\u8fc7\u6ee4\u5668", LVCFMT_LEFT, 174, 0, -1, 1); // Filter → 过滤器
+	m_grid.InsertColumn(SubItem::Match, L"\u5339\u914d", LVCFMT_LEFT, 76, 0, -1, 2);       // Match → 匹配
+	m_grid.InsertColumn(SubItem::Type, L"\u7c7b\u578b", LVCFMT_LEFT, 55, 0, -1, 3);        // Type → 类型
+m_grid.InsertColumn(SubItem::Background, L"\u80cc\u666f\u8272", LVCFMT_LEFT, 50, 0, -1, 4);
+m_grid.InsertColumn(SubItem::Foreground, L"\u6587\u5b57\u8272", LVCFMT_LEFT, 50, 0, -1, 5);
+	m_grid.InsertColumn(SubItem::Remove, L"", LVCFMT_LEFT, 16, 0, -1, 6);
     m_grid.SetExtendedGridStyle(PGS_EX_SINGLECLICKEDIT | PGS_EX_ADDITEMATEND);
 
     UpdateGrid();

@@ -96,7 +96,7 @@ std::wstring FormatDuration(double seconds)
         return wstringbuilder() << FormatUnits(minutes, L"minute") << L" " << FormatUnits(FloorTo<int>(seconds), L"second");
     }
 
-    static const wchar_t* units[] = {L"s", L"ms", L"µs", L"ns", nullptr};
+    static const wchar_t* units[] = {L"s", L"ms", L"?", L"ns", nullptr};
     const wchar_t** unit = units;
     while (*unit != nullptr && seconds > 0 && seconds < 1)
     {
@@ -739,7 +739,6 @@ bool CMainFrame::LoadSettings()
 
     m_applicationName = Win32::RegGetStringValue(reg, L"ApplicationName", L"DebugView++");
     SetTitle();
-
     m_hide = Win32::RegGetDWORDValue(reg, L"Hide", 0) != 0;
 
     auto fontName = Win32::RegGetStringValue(reg, L"FontName", L"").substr(0, LF_FACESIZE - 1);
@@ -1426,21 +1425,26 @@ void CMainFrame::Pause()
     m_logSources.AddMessage("<paused>");
 }
 
+#pragma code_page(936)
+
+
 void CMainFrame::UpdateTitle()
 {
-    std::wstring title = L"Paused";
+    std::wstring title = L"\u5df2\u6682\u505c"; // ???
+
     if ((m_pLocalReader != nullptr) && (m_pGlobalReader != nullptr))
     {
-        title = L"Capture Win32 & Global Win32 Messages";
+        title = L"\u6355\u83b7 Win32 + \u5168\u5c40 Win32 \u6d88\u606f";
     }
     else if (m_pLocalReader != nullptr)
     {
-        title = L"Capture Win32";
+        title = L"\u6355\u83b7 Win32 \u6d88\u606f";
     }
     else if (m_pGlobalReader != nullptr)
     {
-        title = L"Capture Global Win32";
+        title = L"\u6355\u83b7\u5168\u5c40 Win32 \u6d88\u606f";
     }
+
     SetTitle(title);
 }
 
@@ -1456,9 +1460,8 @@ void CMainFrame::Resume()
         }
         catch (std::exception&)
         {
-            MessageBox(L"Unable to capture Win32 Messages.\n"
-                       L"\n"
-                       L"Another DebugView++ (or similar application) might be running.\n",
+            MessageBox(L"????Win32??\n"
+                       L"???????DebugView++?????????",
                 m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             return;
         }
@@ -1472,12 +1475,12 @@ void CMainFrame::Resume()
         }
         catch (std::exception&)
         {
-            MessageBox(L"Unable to capture Global Win32 Messages.\n"
+            MessageBox(L"?????? Win32 ???\n"
                        L"\n"
-                       L"Make sure you have appropriate permissions.\n"
+                       L"????????????\n"
                        L"\n"
-                       L"You may need to start this application by right-clicking it and selecting\n"
-                       L"'Run As Administator' even if you have administrator rights.",
+                       L"????????????????????????\n"
+                       L"?????????????",
                 m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             m_tryGlobal = false;
         }
@@ -1491,12 +1494,12 @@ void CMainFrame::Resume()
         }
         catch (std::exception& e)
         {
-            const auto message = std::format("Unable to capture Kernel Messages.\n"
+            const auto message = std::format("?????????\n"
                                              "({})\n\n"
-                                             "Make sure you have appropriate permissions.\n"
+                                             "????????????\n"
                                              "\n"
-                                             "You may need to start this application by right-clicking it and selecting\n"
-                                             "'Run As Administator' even if you have administrator rights.",
+                                             "??????????????????????\n"
+                                             "???????????",
                 e.what());
             MessageBox(WStr(message), m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             m_tryKernel = false;

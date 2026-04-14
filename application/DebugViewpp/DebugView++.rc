@@ -14,11 +14,10 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
+// 中文(中国)资源
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -45,7 +44,6 @@ BEGIN
 END
 
 #endif    // APSTUDIO_INVOKED
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -74,14 +72,12 @@ BEGIN
     BUTTON      ID_LOG_PAUSE
 END
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Bitmap
 //
 
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -90,162 +86,156 @@ IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
 
 IDR_MAINFRAME MENU
 BEGIN
-    POPUP "&File"
+    POPUP "&文件"
     BEGIN
-        MENUITEM "New &View\tCtrl+N",           ID_FILE_NEWVIEW
-        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
-        MENUITEM "&Run...",                     ID_FILE_RUN
+        MENUITEM "新建&视图\tCtrl+N",           ID_FILE_NEWVIEW
+        MENUITEM "&打开...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&运行...",                     ID_FILE_RUN
         MENUITEM SEPARATOR
-        MENUITEM "Save Selection\tAlt+S",       ID_FILE_SAVE_VIEW_SELECTION
-        MENUITEM "Save View\tCtrl+S",           ID_FILE_SAVE_VIEW
-        MENUITEM "&Save Log\tCtrl+Shift+S",     ID_FILE_SAVE_LOG
+        MENUITEM "保存所选内容\tAlt+S",       ID_FILE_SAVE_VIEW_SELECTION
+        MENUITEM "保存视图\tCtrl+S",           ID_FILE_SAVE_VIEW
+        MENUITEM "&保存日志\tCtrl+Shift+S",     ID_FILE_SAVE_LOG
         MENUITEM SEPARATOR
-        MENUITEM "Load Configuration...",       ID_FILE_LOAD_CONFIGURATION
-        MENUITEM "Save Configuration...",       ID_FILE_SAVE_CONFIGURATION
+        MENUITEM "加载配置...",       ID_FILE_LOAD_CONFIGURATION
+        MENUITEM "保存配置...",       ID_FILE_SAVE_CONFIGURATION
         MENUITEM SEPARATOR
-        MENUITEM "E&xit",                       ID_APP_EXIT
+        MENUITEM "退&出",                       ID_APP_EXIT
     END
-    POPUP "&Log"
+    POPUP "&日志"
     BEGIN
-        MENUITEM "&Clear Log\tCtrl+Shift+X",    ID_LOG_CLEAR
-        MENUITEM "Crop Log to &Selection",      ID_LOG_CROP
-        MENUITEM "&Pause\tPause",               ID_LOG_PAUSE
-        MENUITEM "Capture &Global Win32",       ID_LOG_GLOBAL
-        MENUITEM "Capture &Kernel Messages",    ID_LOG_KERNEL
-        MENUITEM "&Verbose Kernel Messages",    ID_LOG_KERNEL_VERBOSE
-        MENUITEM "Pass-&Through mode",          ID_LOG_KERNEL_PASSTHROUGH
-        MENUITEM "Connect DebugView &Agent",    ID_LOG_DEBUGVIEW_AGENT
-        MENUITEM "Sources...",                  ID_LOG_SOURCES
-        MENUITEM "History Size...",             ID_LOG_HISTORY
+        MENUITEM "&清空日志\tCtrl+Shift+X",    ID_LOG_CLEAR
+        MENUITEM "将日志裁剪为所选内容",      ID_LOG_CROP
+        MENUITEM "&暂停\t暂停",               ID_LOG_PAUSE
+        MENUITEM "捕获全局Win32日志",       ID_LOG_GLOBAL
+        MENUITEM "捕获内核消息",    ID_LOG_KERNEL
+        MENUITEM "详细内核消息",    ID_LOG_KERNEL_VERBOSE
+        MENUITEM "直通模式",          ID_LOG_KERNEL_PASSTHROUGH
+        MENUITEM "连接DebugView代理",    ID_LOG_DEBUGVIEW_AGENT
+        MENUITEM "来源...",                  ID_LOG_SOURCES
+        MENUITEM "历史大小...",             ID_LOG_HISTORY
     END
-    POPUP "&View"
+    POPUP "&视图"
     BEGIN
-        MENUITEM "Clear View",          ID_VIEW_CLEAR
-        MENUITEM "Reset View",                  ID_VIEW_RESET
-        MENUITEM "Reset View to this line",     ID_VIEW_RESET_TO_LINE
-        MENUITEM "Select &All\tCtrl+A",         ID_VIEW_SELECTALL
-        MENUITEM "&Copy\tCtrl+C",               ID_VIEW_COPY
-        MENUITEM "Auto Scroll",                 ID_VIEW_SCROLL
-        MENUITEM "Auto Scroll Stop",            ID_VIEW_SCROLL_STOP
-        MENUITEM "Clock Time\tCtrl+T",          ID_VIEW_TIME
-        MENUITEM "Process Colors",              ID_VIEW_PROCESSCOLORS
+        MENUITEM "清空视图",          ID_VIEW_CLEAR
+        MENUITEM "重置视图",                  ID_VIEW_RESET
+        MENUITEM "重置视图到当前行",     ID_VIEW_RESET_TO_LINE
+        MENUITEM "全&选\tCtrl+A",         ID_VIEW_SELECTALL
+        MENUITEM "&复制\tCtrl+C",               ID_VIEW_COPY
+        MENUITEM "自动滚动",                 ID_VIEW_SCROLL
+        MENUITEM "停止自动滚动",            ID_VIEW_SCROLL_STOP
+        MENUITEM "显示时间\tCtrl+T",          ID_VIEW_TIME
+        MENUITEM "进程着色",              ID_VIEW_PROCESSCOLORS
         MENUITEM SEPARATOR
-        POPUP "&Bookmarks"
+        POPUP "&书签"
         BEGIN
-            MENUITEM "&Bookmark\tCtrl+F2",          ID_VIEW_BOOKMARK
-            MENUITEM "Next Bookmark\tF2",           ID_VIEW_NEXT_BOOKMARK
-            MENUITEM "Previous Bookmark\tShift+F2", ID_VIEW_PREVIOUS_BOOKMARK
-            MENUITEM "Clear Bookmarks\tCtrl+Shift+F2", ID_VIEW_CLEAR_BOOKMARKS
+            MENUITEM "&添加书签\tCtrl+F2",          ID_VIEW_BOOKMARK
+            MENUITEM "下一个书签\tF2",           ID_VIEW_NEXT_BOOKMARK
+            MENUITEM "上一个书签\tShift+F2", ID_VIEW_PREVIOUS_BOOKMARK
+            MENUITEM "清空所有书签\tCtrl+Shift+F2", ID_VIEW_CLEAR_BOOKMARKS
         END
-        MENUITEM "Filters...\tF5",              ID_VIEW_FILTER
+        MENUITEM "过滤器...\tF5",              ID_VIEW_FILTER
     END
-    POPUP "Options"
+    POPUP "选项"
     BEGIN
-        MENUITEM "&Link Views",                 ID_OPTIONS_LINKVIEWS
-        MENUITEM "&Auto Newline",               ID_OPTIONS_AUTONEWLINE
-        MENUITEM "&Prefix PID",                 ID_OPTIONS_PROCESS_PREFIX
-        MENUITEM "&Font...",                    ID_OPTIONS_FONT
-        MENUITEM "Always On &Top",              ID_OPTIONS_ALWAYSONTOP
-        MENUITEM "&Hide When Minimized",        ID_OPTIONS_HIDE
+        MENUITEM "&关联视图",                 ID_OPTIONS_LINKVIEWS
+        MENUITEM "&自动换行",               ID_OPTIONS_AUTONEWLINE
+        MENUITEM "&显示进程ID前缀",                 ID_OPTIONS_PROCESS_PREFIX
+        MENUITEM "&字体...",                    ID_OPTIONS_FONT
+        MENUITEM "始终&置顶",              ID_OPTIONS_ALWAYSONTOP
+        MENUITEM "最小化时&隐藏",        ID_OPTIONS_HIDE
     END
-    POPUP "&Help"
+    POPUP "&帮助"
     BEGIN
-        MENUITEM "&About DebugView++...",       ID_APP_ABOUT
+        MENUITEM "&关于DebugViewAd++...",       ID_APP_ABOUT
     END
 END
 
 IDR_TAB_CONTEXTMENU MENU
 BEGIN
-    POPUP "Tab Context Menu"
+    POPUP "标签右键菜单"
     BEGIN
-        MENUITEM "New &View\tCtrl+N",           ID_FILE_NEWVIEW
-        MENUITEM "&Copy View",                  ID_VIEW_DUPLICATE
+        MENUITEM "新建&视图\tCtrl+N",           ID_FILE_NEWVIEW
+        MENUITEM "&复制视图",                  ID_VIEW_DUPLICATE
         MENUITEM SEPARATOR
-        MENUITEM "Filters...\tF5",              ID_VIEW_FILTER
-        MENUITEM "Clear View",                  ID_VIEW_CLEAR
-        MENUITEM "Close",                       ID_VIEW_CLOSE
+        MENUITEM "过滤器...\tF5",              ID_VIEW_FILTER
+        MENUITEM "清空视图",                  ID_VIEW_CLEAR
+        MENUITEM "关闭",                       ID_VIEW_CLOSE
     END
 END
 
 IDR_VIEW_CONTEXTMENU MENU
 BEGIN
-    POPUP "View Context Menu"
+    POPUP "视图右键菜单"
     BEGIN
-        MENUITEM "Reset View",                  ID_VIEW_RESET
-        MENUITEM "Reset View to this line",     ID_VIEW_RESET_TO_LINE
-        MENUITEM "Clear View",                  ID_VIEW_CLEAR
+        MENUITEM "重置视图",                  ID_VIEW_RESET
+        MENUITEM "重置视图到当前行",     ID_VIEW_RESET_TO_LINE
+        MENUITEM "清空视图",                  ID_VIEW_CLEAR
         MENUITEM SEPARATOR
-        MENUITEM "Exclude line(s)",             ID_VIEW_EXCLUDE_LINES
+        MENUITEM "排除行",             ID_VIEW_EXCLUDE_LINES
         MENUITEM SEPARATOR
-        MENUITEM "Find",                        ID_VIEW_FIND
-        MENUITEM "Select &All\tCtrl+A",         ID_VIEW_SELECTALL
-        MENUITEM "&Copy\tCtrl+C",               ID_VIEW_COPY
-        MENUITEM "Copy &Messages\tCtrl+Shift+C",ID_VIEW_COPY_MESSAGES
+        MENUITEM "查找",                        ID_VIEW_FIND
+        MENUITEM "全&选\tCtrl+A",         ID_VIEW_SELECTALL
+        MENUITEM "&复制\tCtrl+C",               ID_VIEW_COPY
+        MENUITEM "复制&消息\tCtrl+Shift+C",ID_VIEW_COPY_MESSAGES
     END
 END
 
 IDR_PROCESS_CONTEXTMENU MENU
 BEGIN
-    POPUP "Process Context Menu"
+    POPUP "进程右键菜单"
     BEGIN
-        MENUITEM "Next\tF3",                    ID_VIEW_FIND_NEXT
-        MENUITEM "Previous\tShift+F3",          ID_VIEW_FIND_PREVIOUS
+        MENUITEM "下一个\tF3",                    ID_VIEW_FIND_NEXT
+        MENUITEM "上一个\tShift+F3",          ID_VIEW_FIND_PREVIOUS
         MENUITEM SEPARATOR
-//        MENUITEM "Rename Process",              ID_VIEW_PROCESS_RENAME
-//        MENUITEM SEPARATOR
-        MENUITEM "Highlight",                   ID_VIEW_PROCESS_HIGHLIGHT
-        MENUITEM "Include",                     ID_VIEW_PROCESS_INCLUDE
-        MENUITEM "Exclude",                     ID_VIEW_PROCESS_EXCLUDE
-        MENUITEM "Track",                       ID_VIEW_PROCESS_TRACK
-        MENUITEM "Once",                        ID_VIEW_PROCESS_ONCE
+        MENUITEM "高亮显示",                   ID_VIEW_PROCESS_HIGHLIGHT
+        MENUITEM "包含",                     ID_VIEW_PROCESS_INCLUDE
+        MENUITEM "排除",                     ID_VIEW_PROCESS_EXCLUDE
+        MENUITEM "跟踪",                       ID_VIEW_PROCESS_TRACK
+        MENUITEM "单次",                        ID_VIEW_PROCESS_ONCE
         MENUITEM SEPARATOR
-        MENUITEM "Clear View",                  ID_VIEW_CLEAR
-        MENUITEM "Select &All\tCtrl+A",         ID_VIEW_SELECTALL
-        MENUITEM "&Copy\tCtrl+C",               ID_VIEW_COPY
-        MENUITEM "Copy &Messages\tCtrl+Shift+C",ID_VIEW_COPY_MESSAGES
+        MENUITEM "清空视图",                  ID_VIEW_CLEAR
+        MENUITEM "全&选\tCtrl+A",         ID_VIEW_SELECTALL
+        MENUITEM "&复制\tCtrl+C",               ID_VIEW_COPY
+        MENUITEM "复制&消息\tCtrl+Shift+C",ID_VIEW_COPY_MESSAGES
     END
 END
 
 IDR_HIGHLIGHT_CONTEXTMENU MENU
 BEGIN
-    POPUP "Highlighted Text Context Menu"
+    POPUP "高亮文本右键菜单"
     BEGIN
-        MENUITEM "Next\tF3",                    ID_VIEW_FIND_NEXT
-        MENUITEM "Previous\tShift+F3",          ID_VIEW_FIND_PREVIOUS
+        MENUITEM "下一个\tF3",                    ID_VIEW_FIND_NEXT
+        MENUITEM "上一个\tShift+F3",          ID_VIEW_FIND_PREVIOUS
         MENUITEM SEPARATOR
-        MENUITEM "Highlight\tCtrl+H",           ID_VIEW_FILTER_HIGHLIGHT
-        MENUITEM "Include\tCtrl+I",             ID_VIEW_FILTER_INCLUDE
-        MENUITEM "Exclude\tCtrl+E",             ID_VIEW_FILTER_EXCLUDE
-        MENUITEM "Token\tCtrl+K",               ID_VIEW_FILTER_TOKEN
+        MENUITEM "高亮显示\tCtrl+H",           ID_VIEW_FILTER_HIGHLIGHT
+        MENUITEM "包含\tCtrl+I",             ID_VIEW_FILTER_INCLUDE
+        MENUITEM "排除\tCtrl+E",             ID_VIEW_FILTER_EXCLUDE
+        MENUITEM "标记\tCtrl+K",               ID_VIEW_FILTER_TOKEN
         MENUITEM SEPARATOR
-        MENUITEM "Clear View\tCtrl+X",          ID_VIEW_CLEAR
-        MENUITEM "Select &All\tCtrl+A",         ID_VIEW_SELECTALL
-        MENUITEM "&Copy\tCtrl+C",               ID_VIEW_COPY
+        MENUITEM "清空视图\tCtrl+X",          ID_VIEW_CLEAR
+        MENUITEM "全&选\tCtrl+A",         ID_VIEW_SELECTALL
+        MENUITEM "&复制\tCtrl+C",               ID_VIEW_COPY
     END
 END
 
 IDR_HEADER_CONTEXTMENU MENU
 BEGIN
-    POPUP "Header Context Menu"
+    POPUP "表头右键菜单"
     BEGIN
-        MENUITEM "Line",                        ID_VIEW_COLUMN_LINE
-        MENUITEM "Date",                        ID_VIEW_COLUMN_DATE
-        MENUITEM "Time",                        ID_VIEW_COLUMN_TIME
-        MENUITEM "PID",                         ID_VIEW_COLUMN_PID
-        MENUITEM "Process",                     ID_VIEW_COLUMN_PROCESS
+        MENUITEM "行号",                        ID_VIEW_COLUMN_LINE
+        MENUITEM "日期",                        ID_VIEW_COLUMN_DATE
+        MENUITEM "时间",                        ID_VIEW_COLUMN_TIME
+        MENUITEM "进程ID",                         ID_VIEW_COLUMN_PID
+        MENUITEM "进程名",                     ID_VIEW_COLUMN_PROCESS
     END
 END
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
 // Icon
 //
 
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\DebugView++.ico"
-
 IDR_BOOKMARK            ICON                    "res\\Bookmark.ico"
 
 /////////////////////////////////////////////////////////////////////////////
@@ -262,10 +252,10 @@ IDR_DBGV_DRIVER         RCDATA                  "res\\Dbgv.sys"
 
 IDD_ABOUTBOX DIALOGEX 0, 0, 210, 127
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About DebugView++"
-FONT 8, "MS Shell Dlg", 0, 0, 0x0
+CAPTION "关于DebugViewAd++"
+FONT 9, "微软雅黑", 0, 0, 0x0
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,140,108,50,14
+    DEFPUSHBUTTON   "确定",IDOK,140,108,50,14
     ICON            IDR_MAINFRAME,IDC_STATIC,21,26,20,20
     GROUPBOX        "",IDC_STATIC,7,7,193,91
     CTEXT           "DebugView++ VX.X",IDC_VERSION,54,22,118,8
@@ -277,179 +267,179 @@ END
 
 IDD_FILTER DIALOGEX 0, 0, 381, 241
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "View / Filter Settings"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+CAPTION "视图/过滤器设置"
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
     EDITTEXT        IDC_NAME,51,7,94,14,ES_AUTOHSCROLL
     CONTROL         "",IDC_TAB,"SysTabControl32",0x0,7,28,367,168
-    DEFPUSHBUTTON   "OK",IDOK,269,220,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,324,220,50,14
-    LTEXT           "View name:",IDC_STATIC,7,8,42,8
-    PUSHBUTTON      "&Save...",IDC_FILTER_SAVE,7,202,50,14
-    PUSHBUTTON      "&Load...",IDC_FILTER_LOAD,7,220,50,14
-    PUSHBUTTON      "&Remove All",IDC_FILTER_REMOVEALL,61,220,50,14
-    PUSHBUTTON      "RegEx...",IDC_FILTER_REGEX,62,202,50,14
+    DEFPUSHBUTTON   "确定",IDOK,269,220,50,14
+    PUSHBUTTON      "取消",IDCANCEL,324,220,50,14
+    LTEXT           "视图名称:",IDC_STATIC,7,8,42,8
+    PUSHBUTTON      "&保存...",IDC_FILTER_SAVE,7,202,50,14
+    PUSHBUTTON      "&加载...",IDC_FILTER_LOAD,7,220,50,14
+    PUSHBUTTON      "清空&全部",IDC_FILTER_REMOVEALL,61,220,50,14
+    PUSHBUTTON      "正则表达式...",IDC_FILTER_REGEX,62,202,50,14
 END
 
 IDD_FILTER_PAGE DIALOGEX 0, 0, 276, 109
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_FILTER_GRID,"SysListView32",LVS_SINGLESEL | WS_TABSTOP,0,0,276,109
 END
 
 IDD_SOURCES DIALOGEX 0, 0, 321, 158
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "Input Sources"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+CAPTION "输入来源"
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
     CONTROL         "",IDC_SOURCES_GRID,"SysListView32",LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,306,124
-    PUSHBUTTON      "Add...",IDADD,11,137,50,14
-    DEFPUSHBUTTON   "OK",IDOK,194,137,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,247,137,50,14
+    PUSHBUTTON      "添加...",IDADD,11,137,50,14
+    DEFPUSHBUTTON   "确定",IDOK,194,137,50,14
+    PUSHBUTTON      "取消",IDCANCEL,247,137,50,14
 END
 
 IDD_FIND DIALOGEX 0, 0, 145, 12
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
     EDITTEXT        IDC_TEXT,0,0,68,12,ES_AUTOHSCROLL
-    DEFPUSHBUTTON   "&Next",IDC_NEXT,70,0,35,12
-    PUSHBUTTON      "&Previous",IDC_PREVIOUS,108,0,35,12
+    DEFPUSHBUTTON   "&下一个",IDC_NEXT,70,0,35,12
+    PUSHBUTTON      "&上一个",IDC_PREVIOUS,108,0,35,12
 END
 
 IDD_RUN DIALOGEX 0, 0, 306, 68
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "Run"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+CAPTION "运行"
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
-    LTEXT           "Run:",IDC_STATIC,29,9,16,8
+    LTEXT           "运行:",IDC_STATIC,29,9,16,8
     EDITTEXT        IDC_RUN,45,7,234,14,ES_AUTOHSCROLL
     PUSHBUTTON      "...",IDC_BROWSE,281,7,17,14
-    LTEXT           "Arguments:",IDC_STATIC,7,25,38,8
+    LTEXT           "参数:",IDC_STATIC,7,25,38,8
     EDITTEXT        IDC_ARGUMENTS,45,23,234,14,ES_AUTOHSCROLL
-    DEFPUSHBUTTON   "OK",IDOK,195,47,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,249,47,50,14
+    DEFPUSHBUTTON   "确定",IDOK,195,47,50,14
+    PUSHBUTTON      "取消",IDCANCEL,249,47,50,14
 END
 
 IDD_HISTORY DIALOGEX 0, 0, 118, 78
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Log History"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+CAPTION "日志历史记录"
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
-    LTEXT           "Log History:",IDC_STATIC,7,24,40,8
+    LTEXT           "日志历史:",IDC_STATIC,7,24,40,8
     EDITTEXT        IDC_HISTORY,50,22,40,14,ES_AUTOHSCROLL | ES_NUMBER
-    LTEXT           "lines",IDC_STATIC,94,24,15,8
-    CONTROL         "Unlimited",IDC_UNLIMITED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,38,45,10
-    DEFPUSHBUTTON   "OK",IDOK,7,57,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,61,57,50,14
+    LTEXT           "行",IDC_STATIC,94,24,15,8
+    CONTROL         "无限制",IDC_UNLIMITED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,51,38,45,10
+    DEFPUSHBUTTON   "确定",IDOK,7,57,50,14
+    PUSHBUTTON      "取消",IDCANCEL,61,57,50,14
 END
 
 IDD_REGEX DIALOGEX 0, 0, 335, 188
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "ECMAScript Regular Expression Reference"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
+CAPTION "ECMAScript正则表达式参考"
+FONT 9, "微软雅黑", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "Close",IDOK,278,167,50,14
-    GROUPBOX        "Basics",IDC_STATIC,7,7,90,73
+    DEFPUSHBUTTON   "关闭",IDOK,278,167,50,14
+    GROUPBOX        "基础",IDC_STATIC,7,7,90,73
     LTEXT           "a",IDC_STATIC,12,17,15,8
-    LTEXT           "Character a",IDC_STATIC,35,17,66,8
+    LTEXT           "字符a",IDC_STATIC,35,17,66,8
     LTEXT           "ab",IDC_STATIC,12,29,15,8
-    LTEXT           "String ab",IDC_STATIC,35,29,66,8
+    LTEXT           "字符串ab",IDC_STATIC,35,29,66,8
     LTEXT           "a|b",IDC_STATIC,12,41,15,8
-    LTEXT           "a or b",IDC_STATIC,35,41,66,8
+    LTEXT           "a或b",IDC_STATIC,35,41,66,8
     LTEXT           "a*",IDC_STATIC,12,53,15,8
-    LTEXT           "0 or more a's",IDC_STATIC,35,53,66,8
+    LTEXT           "0个或多个a",IDC_STATIC,35,53,66,8
     LTEXT           "\\",IDC_STATIC,12,65,15,8
-    LTEXT           "Escape character",IDC_STATIC,35,65,79,8
-    GROUPBOX        "Quantifiers",IDC_STATIC,7,83,90,98
+    LTEXT           "转义字符",IDC_STATIC,35,65,79,8
+    GROUPBOX        "量词",IDC_STATIC,7,83,90,98
     LTEXT           "*",IDC_STATIC,12,98,8,8
-    LTEXT           "0 or more",IDC_STATIC,35,98,66,8
+    LTEXT           "0个或多个",IDC_STATIC,35,98,66,8
     LTEXT           "+",IDC_STATIC,12,109,8,8
-    LTEXT           "1 or more",IDC_STATIC,35,109,66,8
+    LTEXT           "1个或多个",IDC_STATIC,35,109,66,8
     LTEXT           "?",IDC_STATIC,12,120,8,8
-    LTEXT           "0 or 1",IDC_STATIC,35,120,66,8
+    LTEXT           "0个或1个",IDC_STATIC,35,120,66,8
     LTEXT           "{2}",IDC_STATIC,12,131,16,8
-    LTEXT           "Exactly 2",IDC_STATIC,35,131,66,8
+    LTEXT           "恰好2个",IDC_STATIC,35,131,66,8
     LTEXT           "{2,5}",IDC_STATIC,12,142,16,8
-    LTEXT           "From 2 to 5",IDC_STATIC,35,142,66,8
+    LTEXT           "2~5个",IDC_STATIC,35,142,66,8
     LTEXT           "{,5}",IDC_STATIC,12,153,16,8
-    LTEXT           "Up to 5",IDC_STATIC,35,153,66,8
+    LTEXT           "最多5个",IDC_STATIC,35,153,66,8
     LTEXT           "{2,}",IDC_STATIC,12,164,16,8
-    LTEXT           "2 or more",IDC_STATIC,35,164,66,8
-    GROUPBOX        "Character Classes",IDC_STATIC,104,7,110,96
+    LTEXT           "至少2个",IDC_STATIC,35,164,66,8
+    GROUPBOX        "字符类",IDC_STATIC,104,7,110,96
     LTEXT           "[abx-z]",IDC_STATIC,109,20,28,8
-    LTEXT           "One of a, b, x, y or z",IDC_STATIC,139,20,90,8
+    LTEXT           "a、b、x、y、z中的一个",IDC_STATIC,139,20,90,8
     LTEXT           "[^abx-z]",IDC_STATIC,109,30,28,8
-    LTEXT           "Not a, b, x, y or z",IDC_STATIC,139,30,90,8
+    LTEXT           "非a、b、x、y、z",IDC_STATIC,139,30,90,8
     LTEXT           "\\d",IDC_STATIC,109,40,28,8
-    LTEXT           "digit",IDC_STATIC,139,40,90,8
+    LTEXT           "数字",IDC_STATIC,139,40,90,8
     LTEXT           "\\D",IDC_STATIC,109,49,28,8
-    LTEXT           "Non-digit",IDC_STATIC,139,49,90,8
+    LTEXT           "非数字",IDC_STATIC,139,49,90,8
     LTEXT           "\\s",IDC_STATIC,109,59,28,8
-    LTEXT           "whitespace",IDC_STATIC,139,59,90,8
+    LTEXT           "空白字符",IDC_STATIC,139,59,90,8
     LTEXT           "\\S",IDC_STATIC,109,69,28,8
-    LTEXT           "Non-whitespace",IDC_STATIC,139,69,90,8
+    LTEXT           "非空白字符",IDC_STATIC,139,69,90,8
     LTEXT           "\\w",IDC_STATIC,109,80,28,8
-    LTEXT           "Word character",IDC_STATIC,139,80,90,8
+    LTEXT           "单词字符",IDC_STATIC,139,80,90,8
     LTEXT           "\\W",IDC_STATIC,109,90,28,8
-    LTEXT           "Non-word character",IDC_STATIC,139,90,90,8
-    GROUPBOX        "Assertions",IDC_STATIC,104,105,110,76
+    LTEXT           "非单词字符",IDC_STATIC,139,90,90,8
+    GROUPBOX        "断言",IDC_STATIC,104,105,110,76
     LTEXT           "^",IDC_STATIC,109,116,28,8
-    LTEXT           "Start of string",IDC_STATIC,139,114,90,8
+    LTEXT           "字符串开头",IDC_STATIC,139,114,90,8
     LTEXT           "$",IDC_STATIC,109,127,28,8
-    LTEXT           "End of string",IDC_STATIC,139,126,90,8
+    LTEXT           "字符串结尾",IDC_STATIC,139,126,90,8
     LTEXT           "\\b",IDC_STATIC,109,137,28,8
-    LTEXT           "Word boundary",IDC_STATIC,139,137,90,8
+    LTEXT           "单词边界",IDC_STATIC,139,137,90,8
     LTEXT           "\\B",IDC_STATIC,109,147,28,8
-    LTEXT           "Non-word boundary",IDC_STATIC,139,147,90,8
+    LTEXT           "非单词边界",IDC_STATIC,139,147,90,8
     LTEXT           "(?=...)",IDC_STATIC,109,158,28,8
-    LTEXT           "Positive lookahead",IDC_STATIC,139,157,90,8
+    LTEXT           "正向先行断言",IDC_STATIC,139,157,90,8
     LTEXT           "(?!...)",IDC_STATIC,109,169,28,8
-    LTEXT           "Negative lookahead",IDC_STATIC,139,168,90,8
-    GROUPBOX        "Special Characters",IDC_STATIC,227,7,101,56
+    LTEXT           "负向先行断言",IDC_STATIC,139,168,90,8
+    GROUPBOX        "特殊字符",IDC_STATIC,227,7,101,56
     LTEXT           "\\t",IDC_STATIC,233,22,28,8
-    LTEXT           "Tab",IDC_STATIC,256,22,66,8
+    LTEXT           "制表符",IDC_STATIC,256,22,66,8
     LTEXT           "\\NNN",IDC_STATIC,233,32,28,8
-    LTEXT           "Octal character NNN",IDC_STATIC,256,32,66,8
+    LTEXT           "八进制字符NNN",IDC_STATIC,256,32,66,8
     LTEXT           "\\xNN",IDC_STATIC,233,42,28,8
-    LTEXT           "Hex character NN",IDC_STATIC,255,42,66,8
-    GROUPBOX        "Groups",IDC_STATIC,227,66,101,92
+    LTEXT           "十六进制字符NN",IDC_STATIC,255,42,66,8
+    GROUPBOX        "分组",IDC_STATIC,227,66,101,92
     LTEXT           "(...)",IDC_STATIC,233,81,28,8
-    LTEXT           "Capturing group",IDC_STATIC,256,81,66,8
+    LTEXT           "捕获分组",IDC_STATIC,256,81,66,8
     LTEXT           "(?:...)",IDC_STATIC,233,91,28,8
-    LTEXT           "Non-capturing group",IDC_STATIC,256,91,66,8
+    LTEXT           "非捕获分组",IDC_STATIC,256,91,66,8
     LTEXT           "\\N",IDC_STATIC,233,101,28,8
-    LTEXT           "Match N'th captured group",IDC_STATIC,256,101,66,20
-    LTEXT           "Match type RegexGroups highlights the captured groups only.",IDC_STATIC,233,124,88,30
+    LTEXT           "匹配第N个捕获分组",IDC_STATIC,256,101,66,20
+    LTEXT           "正则分组匹配仅高亮显示捕获的分组。",IDC_STATIC,233,124,88,30
 END
 
 IDD_SOURCE DIALOGEX 0, 0, 299, 91
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Add Log Source"
-FONT 8, "MS Shell Dlg", 400, 0, 0x0
+CAPTION "添加日志来源"
+FONT 9, "微软雅黑", 400, 0, 0x0
 BEGIN
-    LTEXT           "Name:",IDC_STATIC,31,10,22,8
+    LTEXT           "名称:",IDC_STATIC,31,10,22,8
     EDITTEXT        IDC_NAME,58,7,234,14,ES_AUTOHSCROLL
-    LTEXT           "Type:",IDC_STATIC,33,28,20,8
+    LTEXT           "类型:",IDC_STATIC,33,28,20,8
     COMBOBOX        IDC_TYPE,57,27,132,19,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Address:",IDC_STATIC,23,48,30,8
+    LTEXT           "地址:",IDC_STATIC,23,48,30,8
     CONTROL         "",IDC_IPADDRESS,"SysIPAddress32",WS_TABSTOP,58,45,100,15
-    LTEXT           "Port:",IDC_STATIC,170,48,17,8
+    LTEXT           "端口:",IDC_STATIC,170,48,17,8
     EDITTEXT        IDC_PORT,191,46,37,14,ES_AUTOHSCROLL | ES_NUMBER
-    PUSHBUTTON      "OK",IDOK,189,70,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,242,70,50,14
+    PUSHBUTTON      "确定",IDOK,189,70,50,14
+    PUSHBUTTON      "取消",IDCANCEL,242,70,50,14
 END
 
 IDD_RENAMEPROCESS DIALOGEX 0, 0, 299, 91
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Rename process"
-FONT 8, "MS Shell Dlg", 400, 0, 0x0
+CAPTION "重命名进程"
+FONT 9, "微软雅黑", 400, 0, 0x0
 BEGIN
-    LTEXT           "Name:",IDC_STATIC,31,10,22,8
+    LTEXT           "名称:",IDC_STATIC,31,10,22,8
     EDITTEXT        IDC_NAME,58,7,234,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "OK",IDOK,189,70,50,14
-    PUSHBUTTON      "Cancel",IDCANCEL,242,70,50,14
+    PUSHBUTTON      "确定",IDOK,189,70,50,14
+    PUSHBUTTON      "取消",IDCANCEL,242,70,50,14
 END
 
 /////////////////////////////////////////////////////////////////////////////
@@ -529,7 +519,6 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Accelerator
@@ -564,14 +553,12 @@ BEGIN
     VK_DELETE,      ID_VIEW_FILTER_EXCLUDE, VIRTKEY, CONTROL, NOINVERT
 END
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // Cursor
 //
 
 IDC_DRAGDROP            CURSOR                  "res\\DragDrop.cur"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -583,7 +570,6 @@ BEGIN
     0
 END
 
-
 /////////////////////////////////////////////////////////////////////////////
 //
 // String Table
@@ -593,102 +579,100 @@ STRINGTABLE
 BEGIN
     IDR_APPNAME             "DebugView++"
     IDC_DEBUGVIEW_URL       "http://debugviewpp.wordpress.com/"
-    IDS_LASTVALUE           "<< Click to add a new filter, drag to rearrange >>"
+    IDS_LASTVALUE           "<< 点击添加新过滤器，拖动调整顺序 >>"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_NEWVIEW         "New View\nNew View"
-    ID_FILE_RUN             "Run program\nRun"
-    ID_FILE_SAVE_LOG        "Save log contents\nSave Log"
-    ID_FILE_SAVE_VIEW       "Save view contents\nSave View"
-    ID_FILE_LOAD_CONFIGURATION "Load view configuration\nLoad Configuration"
-    ID_FILE_SAVE_CONFIGURATION "Save view configuration\nSave Configuration"
-    ID_LOG_CLEAR            "Clear Log Storage\nClear Log"
+    ID_FILE_NEWVIEW         "新建视图\n新建视图"
+    ID_FILE_RUN             "运行程序\n运行"
+    ID_FILE_SAVE_LOG        "保存日志内容\n保存日志"
+    ID_FILE_SAVE_VIEW       "保存视图内容\n保存视图"
+    ID_FILE_LOAD_CONFIGURATION "加载视图配置\n加载配置"
+    ID_FILE_SAVE_CONFIGURATION "保存视图配置\n保存配置"
+    ID_LOG_CLEAR            "清空日志存储\n清空日志"
 END
 
 STRINGTABLE
 BEGIN
-    ID_VIEW_PROCESSCOLORS   "Highlight processes\nProcess Colors"
-    ID_LOG_SOURCES          "Configure log sources\nSources"
-    ID_FILE_SAVE_VIEW_SELECTION "Save view selection\nSave Selection"
+    ID_VIEW_PROCESSCOLORS   "高亮显示进程\n进程着色"
+    ID_LOG_SOURCES          "配置日志来源\n来源"
+    ID_FILE_SAVE_VIEW_SELECTION "保存视图所选内容\n保存所选内容"
 END
 
 STRINGTABLE
 BEGIN
-    ID_APP_ABOUT            "About DebugView++\nAbout DebugView++"
-    ID_APP_EXIT             "Exit\nExit"
+    ID_APP_ABOUT            "关于DebugView++\n关于DebugView++"
+    ID_APP_EXIT             "退出\n退出"
 END
 
 STRINGTABLE
 BEGIN
-    ID_LOG_PAUSE            "Pause log recording\nPause"
-    ID_LOG_GLOBAL           "Capture logs from all processes\nCapture Global Win32"
-    ID_LOG_KERNEL           "Capture logs from kernel processes\nCapture Kernel Messages"
-    ID_LOG_KERNEL_VERBOSE   "Enable verbose kernel messsages\nVerbose Kernel Messages"
-    ID_LOG_KERNEL_PASSTHROUGH "Enable Pass-throught mode\nPass-Through mode"
-    ID_LOG_DEBUGVIEW_AGENT  "Connect DbgView Agent\nConnect DbgView Agent"
-    ID_LOG_HISTORY          "Configure log file history size\nConfigure History Size"
-    ID_VIEW_CLEAR           "Clear log view\nClear View"
-    ID_VIEW_SELECTALL       "Select all lines\nSelect All"
-    ID_VIEW_COPY            "Copy log selection to clipboard\nCopy"
-    ID_VIEW_SCROLL          "Auto Scroll Log View\nAuto Scroll"
-    ID_VIEW_SCROLL_STOP     "Stop scrolling the log view when selecting an item\nAuto Scroll Stop"
-    ID_VIEW_TIME            "Toggle relative time or clock time.\nClock Time"
-    ID_VIEW_FILTER          "Edit log filter settings\nFilter"
-    ID_VIEW_FIND            "Find text\nFind"
-    ID_VIEW_FIND_NEXT       "Find next match\nNext"
-    ID_VIEW_FIND_PREVIOUS   "Find previous match\nPrevious"
-    ID_VIEW_NEXT_PROCESS    "Find next match\nNext"
+    ID_LOG_PAUSE            "暂停日志记录\n暂停"
+    ID_LOG_GLOBAL           "捕获所有进程的日志\n捕获全局Win32"
+    ID_LOG_KERNEL           "捕获内核进程日志\n捕获内核消息"
+    ID_LOG_KERNEL_VERBOSE   "启用详细内核消息\n详细内核消息"
+    ID_LOG_KERNEL_PASSTHROUGH "启用直通模式\n直通模式"
+    ID_LOG_DEBUGVIEW_AGENT  "连接DebugView代理\n连接DebugView代理"
+    ID_LOG_HISTORY          "配置日志文件历史大小\n配置历史大小"
+    ID_VIEW_CLEAR           "清空日志视图\n清空视图"
+    ID_VIEW_SELECTALL       "全选所有行\n全选"
+    ID_VIEW_COPY            "复制所选日志到剪贴板\n复制"
+    ID_VIEW_SCROLL          "自动滚动日志视图\n自动滚动"
+    ID_VIEW_SCROLL_STOP     "选择项目时停止滚动日志视图\n停止自动滚动"
+    ID_VIEW_TIME            "切换相对时间/时钟时间\n显示时间"
+    ID_VIEW_FILTER          "编辑日志过滤器设置\n过滤器"
+    ID_VIEW_FIND            "查找文本\n查找"
+    ID_VIEW_FIND_NEXT       "查找下一个匹配项\n下一个"
+    ID_VIEW_FIND_PREVIOUS   "查找上一个匹配项\n上一个"
+    ID_VIEW_NEXT_PROCESS    "查找下一个匹配项\n下一个"
 END
 
 STRINGTABLE
 BEGIN
-    ID_VIEW_PREVIOUS_PROCESS "Find previous match\nPrevious"
-    ID_VIEW_BOOKMARK        "Toggle bookmark\nBookmark"
-    ID_VIEW_NEXT_BOOKMARK   "Find next bookmark\nNext Bookmark"
-    ID_VIEW_PREVIOUS_BOOKMARK "Find previous bookmark\nPrevious Bookmark"
-    ID_VIEW_CLEAR_BOOKMARKS "Clear all bookmarks in this view\nClear Bookmarks"
-    ID_VIEW_PROCESS_HIGHLIGHT "Add highlight filter\nHighlight"
-    ID_VIEW_PROCESS_INCLUDE "Add include filter\nInclude"
-    ID_VIEW_PROCESS_EXCLUDE "Add exclude filter\nExclude"
-    ID_VIEW_PROCESS_TRACK   "Add track filter\nTrack"
-    ID_VIEW_PROCESS_ONCE    "Add once filter\nOnce"
-    ID_VIEW_FILTER_HIGHLIGHT "Add highlight filter\nHighlight"
-    ID_VIEW_FILTER_INCLUDE  "Add include filter\nInclude"
-    ID_VIEW_FILTER_EXCLUDE  "Add exclude filter\nExclude"
-    ID_VIEW_FILTER_TOKEN    "Add token filter\nToken"
-    ID_VIEW_FILTER_TRACK    "Add track filter\nTrack"
-    ID_VIEW_FILTER_ONCE     "Add once filter\nOnce"
+    ID_VIEW_PREVIOUS_PROCESS "查找上一个匹配项\n上一个"
+    ID_VIEW_BOOKMARK        "切换书签\n书签"
+    ID_VIEW_NEXT_BOOKMARK   "查找下一个书签\n下一个书签"
+    ID_VIEW_PREVIOUS_BOOKMARK "查找上一个书签\n上一个书签"
+    ID_VIEW_CLEAR_BOOKMARKS "清空当前视图所有书签\n清空书签"
+    ID_VIEW_PROCESS_HIGHLIGHT "添加高亮过滤器\n高亮显示"
+    ID_VIEW_PROCESS_INCLUDE "添加包含过滤器\n包含"
+    ID_VIEW_PROCESS_EXCLUDE "添加排除过滤器\n排除"
+    ID_VIEW_PROCESS_TRACK   "添加跟踪过滤器\n跟踪"
+    ID_VIEW_PROCESS_ONCE    "添加单次过滤器\n单次"
+    ID_VIEW_FILTER_HIGHLIGHT "添加高亮过滤器\n高亮显示"
+    ID_VIEW_FILTER_INCLUDE  "添加包含过滤器\n包含"
+    ID_VIEW_FILTER_EXCLUDE  "添加排除过滤器\n排除"
+    ID_VIEW_FILTER_TOKEN    "添加标记过滤器\n标记"
+    ID_VIEW_FILTER_TRACK    "添加跟踪过滤器\n跟踪"
+    ID_VIEW_FILTER_ONCE     "添加单次过滤器\n单次"
 END
 
 STRINGTABLE
 BEGIN
-    ID_OPTIONS_LINKVIEWS    "Link focus between views\nLink Views"
-    ID_OPTIONS_AUTONEWLINE  "Append newline at end of each message\nAuto Newline"
-    ID_OPTIONS_PROCESS_PREFIX "Prefix all messages with the process ID\nPrefix PID"
-    ID_OPTIONS_FONT         "Select font\nFont"
-    ID_OPTIONS_HIDE         "Hide DebugView++ when it is minimized\nHide When Minimized"
-    ID_OPTIONS_ALWAYSONTOP  "Keep DebugView++ window on top\nAlways On Top"
+    ID_OPTIONS_LINKVIEWS    "关联视图间焦点\n关联视图"
+    ID_OPTIONS_AUTONEWLINE  "每条消息末尾自动换行\n自动换行"
+    ID_OPTIONS_PROCESS_PREFIX "所有消息添加进程ID前缀\n显示进程ID前缀"
+    ID_OPTIONS_FONT         "选择字体\n字体"
+    ID_OPTIONS_HIDE         "最小化时隐藏DebugView++\n最小化时隐藏"
+    ID_OPTIONS_ALWAYSONTOP  "保持DebugView++窗口置顶\n始终置顶"
 END
 
 STRINGTABLE
 BEGIN
-    ID_SELECTION_PANE       "Selected: 14 minutes, 4 seconds (#### lines)    "
-    ID_VIEW_PANE            "View: 14 minutes, 37 seconds (#### lines)       "
-    ID_LOGFILE_PANE         "Log: 14 minutes, 4 seconds (#### lines)         "
+    ID_SELECTION_PANE       "已选：14分4秒 (#### 行)    "
+    ID_VIEW_PANE            "视图：14分37秒 (#### 行)       "
+    ID_LOGFILE_PANE         "日志：14分4秒 (#### 行)         "
     ID_MEMORY_PANE          "###### MB"
 END
 
 STRINGTABLE
 BEGIN
-    ID_FILE_OPEN            "Open log file\nOpen Log File"
+    ID_FILE_OPEN            "打开日志文件\n打开日志文件"
 END
 
-#endif    // English (United States) resources
+#endif    // 中文(中国)资源
 /////////////////////////////////////////////////////////////////////////////
-
-
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -699,4 +683,3 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

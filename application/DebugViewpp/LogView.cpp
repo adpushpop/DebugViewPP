@@ -308,13 +308,13 @@ LRESULT CLogView::OnCreate(const CREATESTRUCT* /*pCreate*/)
     DefWindowProc();
     m_hdr.SubclassWindow(GetHeader());
     m_columns.push_back(MakeColumn(Column::Bookmark, L"", LVCFMT_RIGHT, 20));
-    m_columns.push_back(MakeColumn(Column::Line, L"Line", LVCFMT_RIGHT, 60));
-    m_columns.push_back(MakeColumn(Column::Date, L"Date", LVCFMT_RIGHT, 90));
+    m_columns.push_back(MakeColumn(Column::Line, L"\u5e8f\u53f7", LVCFMT_RIGHT, 60));
+    m_columns.push_back(MakeColumn(Column::Date, L"\u65e5\u671f", LVCFMT_RIGHT, 90));
     m_columns.back().enable = false; // Default no Date column
-    m_columns.push_back(MakeColumn(Column::Time, L"Time", LVCFMT_RIGHT, 90));
+    m_columns.push_back(MakeColumn(Column::Time, L"\u65f6\u95f4", LVCFMT_RIGHT, 90));
     m_columns.push_back(MakeColumn(Column::Pid, L"PID", LVCFMT_RIGHT, 60));
-    m_columns.push_back(MakeColumn(Column::Process, L"Process", LVCFMT_LEFT, 140));
-    m_columns.push_back(MakeColumn(Column::Message, L"Message", LVCFMT_LEFT, 1500));
+    m_columns.push_back(MakeColumn(Column::Process, L"\u8fdb\u7a0b", LVCFMT_LEFT, 140));
+    m_columns.push_back(MakeColumn(Column::Message, L"\u6d88\u606f", LVCFMT_LEFT, 1500));
     UpdateColumns();
 
     ApplyFilters();

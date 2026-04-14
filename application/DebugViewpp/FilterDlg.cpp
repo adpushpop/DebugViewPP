@@ -134,8 +134,8 @@ BOOL CFilterDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
     SetDlgItemText(IDC_NAME, m_name.c_str());
 
     m_tabCtrl.Attach(GetDlgItem(IDC_TAB));
-    m_tabCtrl.AddItem(L"Messages");
-    m_tabCtrl.AddItem(L"Processes");
+    m_tabCtrl.AddItem(L"\u6d88\u606f"); // Messages ? ??
+    m_tabCtrl.AddItem(L"\u8fdb\u7a0b"); // Processes ? ??
     CRect tabRect;
     m_tabCtrl.GetWindowRect(&tabRect);
     m_tabCtrl.AdjustRect(0, &tabRect);
@@ -214,7 +214,7 @@ void CFilterDlg::OnSave(UINT /*uNotifyCode*/, int /*nID*/, CWindow /*wndCtl*/)
         L"\0",
         nullptr);
     dlg.m_ofn.nFilterIndex = 0;
-    dlg.m_ofn.lpstrTitle = L"Save DebugView Filter";
+    dlg.m_ofn.lpstrTitle = L"\u4fdd\u5b58 DebugView \u8fc7\u6ee4\u5668";
     if (dlg.DoModal() != IDOK)
     {
         return;
@@ -247,13 +247,13 @@ void CFilterDlg::OnLoad(UINT /*uNotifyCode*/, int /*nID*/, CWindow /*wndCtl*/)
         L"\0",
         nullptr);
     dlg.m_ofn.nFilterIndex = 0;
-    dlg.m_ofn.lpstrTitle = L"Load DebugView Filter";
+    dlg.m_ofn.lpstrTitle = L"\u52a0\u8f7d DebugView \u8fc7\u6ee4\u5668";
 
     wchar_t szPath[MAX_PATH];
     if (SUCCEEDED(SHGetFolderPath(nullptr, CSIDL_PERSONAL, nullptr, 0, szPath)))
     {
         path = szPath; // bug gevonden met PVS studio!!
-        path += L"\\DebugView++ Filters";
+        path += L"\\DebugView++ \u8fc7\u6ee4\u5668";
         dlg.m_ofn.lpstrInitialDir = path.c_str();
     }
 
