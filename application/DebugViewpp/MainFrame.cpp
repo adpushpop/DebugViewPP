@@ -1460,9 +1460,9 @@ void CMainFrame::Resume()
         }
         catch (std::exception&)
         {
-            MessageBox(L"????Win32??\n"
-                       L"???????DebugView++?????????",
-                m_applicationName.c_str(), MB_ICONERROR | MB_OK);
+		   MessageBox(L"\u65e0\u6cd5\u6355\u83b7Win32\u6d88\u606f\n"
+           L"\u53ef\u80fd\u5df2\u6709\u53e6\u4e00\u4e2aDebugView++\u6216\u540c\u7c7b\u7a0b\u5e8f\u6b63\u5728\u8fd0\u884c",
+           m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             return;
         }
     }
@@ -1475,13 +1475,13 @@ void CMainFrame::Resume()
         }
         catch (std::exception&)
         {
-            MessageBox(L"?????? Win32 ???\n"
-                       L"\n"
-                       L"????????????\n"
-                       L"\n"
-                       L"????????????????????????\n"
-                       L"?????????????",
-                m_applicationName.c_str(), MB_ICONERROR | MB_OK);
+			MessageBox(L"\u65e0\u6cd5\u6355\u83b7\u5168\u5c40 Win32 \u6d88\u606f\u3002\n"
+           L"\n"
+           L"\u8bf7\u786e\u4fdd\u4f60\u62e5\u6709\u8db3\u591f\u7684\u6743\u9650\u3002\n"
+           L"\n"
+           L"\u5373\u4f7f\u4f60\u62e5\u6709\u7ba1\u7406\u5458\u6743\u9650\uff0c\u4e5f\u53ef\u80fd\u9700\u8981\u53f3\u952e\u5355\u51fb\u6b64\u7a0b\u5e8f\uff0c\n"
+           L"\u9009\u62e9\u3010\u4ee5\u7ba1\u7406\u5458\u8eab\u4efd\u8fd0\u884c\u3011\u3002",
+           m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             m_tryGlobal = false;
         }
     }
@@ -1494,12 +1494,12 @@ void CMainFrame::Resume()
         }
         catch (std::exception& e)
         {
-            const auto message = std::format("?????????\n"
-                                             "({})\n\n"
-                                             "????????????\n"
-                                             "\n"
-                                             "??????????????????????\n"
-                                             "???????????",
+			const auto message = std::format("\u65e0\u6cd5\u6355\u83b7\u5185\u6838\u6d88\u606f\u3002\n"
+                                 "({})\n\n"
+                                 "\u8bf7\u786e\u4fdd\u4f60\u62e5\u6709\u8db3\u591f\u7684\u6743\u9650\u3002\n"
+                                 "\n"
+                                 "\u5373\u4f7f\u4f60\u62e5\u6709\u7ba1\u7406\u5458\u6743\u9650\uff0c\u4e5f\u9700\u8981\u53f3\u952e\u6b64\u7a0b\u5e8f\uff0c\u9009\u62e9\n"
+                                 "\u3010\u4ee5\u7ba1\u7406\u5458\u8eab\u4efd\u8fd0\u884c\u3011\u3002",
                 e.what());
             MessageBox(WStr(message), m_applicationName.c_str(), MB_ICONERROR | MB_OK);
             m_tryKernel = false;
