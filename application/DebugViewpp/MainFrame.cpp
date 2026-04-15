@@ -96,7 +96,7 @@ std::wstring FormatDuration(double seconds)
         return wstringbuilder() << FormatUnits(minutes, L"minute") << L" " << FormatUnits(FloorTo<int>(seconds), L"second");
     }
 
-    static const wchar_t* units[] = {L"s", L"ms", L"µs", L"ns", nullptr};
+    static const wchar_t* units[] = {L"s", L"ms", L"?", L"ns", nullptr};
     const wchar_t** unit = units;
     while (*unit != nullptr && seconds > 0 && seconds < 1)
     {
@@ -1406,7 +1406,7 @@ bool CMainFrame::IsPaused() const
 
 void CMainFrame::Pause()
 {
-    SetTitle(L"Paused");
+    SetTitle(L"\u5df2\u6682\u505c");
     if (m_pLocalReader != nullptr)
     {
         m_logSources.Remove(m_pLocalReader);
@@ -1422,7 +1422,7 @@ void CMainFrame::Pause()
         m_logSources.Remove(m_pKernelReader);
         m_pKernelReader = nullptr;
     }
-    m_logSources.AddMessage("<paused>");
+    m_logSources.AddMessage("<\u5df2\u6682\u505c>");
 }
 
 #pragma code_page(936)
@@ -1430,7 +1430,7 @@ void CMainFrame::Pause()
 
 void CMainFrame::UpdateTitle()
 {
-    std::wstring title = L"\u5df2\u6682\u505c"; // ???
+    std::wstring title = L"\u5df2\u6682\u505c"; 
 
     if ((m_pLocalReader != nullptr) && (m_pGlobalReader != nullptr))
     {
@@ -1629,7 +1629,7 @@ void CMainFrame::OnLogDebugviewAgent(UINT /*uNotifyCode*/, int /*nID*/, CWindow 
         }
         else
         {
-            m_logSources.AddMessage("dbgview.exe not found");
+            m_logSources.AddMessage("<dbgview.exe not found>");
         }
         m_pDbgviewReader = m_logSources.AddDbgviewReader("127.0.0.1");
     }
